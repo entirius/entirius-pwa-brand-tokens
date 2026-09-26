@@ -23,6 +23,18 @@ StyleDictionary.registerTransform({
   transform: (token) => `var(--${brandName(token)})`,
 });
 
+// Generated files carry the MPL-2.0 notice under Style Dictionary's "do not edit" line.
+StyleDictionary.registerFileHeader({
+  name: 'mpl',
+  fileHeader: (defaultMessage) => [
+    ...defaultMessage,
+    '',
+    'This Source Code Form is subject to the terms of the Mozilla Public',
+    'License, v. 2.0. If a copy of the MPL was not distributed with this',
+    'file, You can obtain one at https://mozilla.org/MPL/2.0/.',
+  ],
+});
+
 StyleDictionary.registerFormat({ name: 'css/brand-tokens', format: cssWithFontFace });
 StyleDictionary.registerFormat({ name: 'javascript/tailwind-preset', format: tailwindPreset });
 
@@ -34,19 +46,19 @@ const sd = new StyleDictionary({
     css: {
       transforms: ['name/brand', 'fontFamily/css'],
       buildPath: 'dist/',
-      files: [{ destination: 'tokens.css', format: 'css/brand-tokens', options: { outputReferences: true } }],
+      files: [{ destination: 'tokens.css', format: 'css/brand-tokens', options: { outputReferences: true, fileHeader: 'mpl' } }],
     },
     scss: {
       transforms: ['name/brand', 'value/brand-css-var'],
       buildPath: 'dist/',
       files: [
-        { destination: '_tokens.scss', format: 'scss/map-deep', filter: isVariable, options: { mapName: 'brand' } },
+        { destination: '_tokens.scss', format: 'scss/map-deep', filter: isVariable, options: { mapName: 'brand', fileHeader: 'mpl' } },
       ],
     },
     tailwind: {
       transforms: ['name/brand', 'fontFamily/css'],
       buildPath: 'dist/',
-      files: [{ destination: 'tailwind-preset.js', format: 'javascript/tailwind-preset' }],
+      files: [{ destination: 'tailwind-preset.js', format: 'javascript/tailwind-preset', options: { fileHeader: 'mpl' } }],
     },
   },
 });
