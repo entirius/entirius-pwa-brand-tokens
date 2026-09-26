@@ -1,0 +1,209 @@
+{
+  "$description": "Entirius brand primitives — the only source of brand values for www, docs and the CMS. DTCG format (https://tr.designtokens.org/format/). Generated names: CSS `--brand-<path joined by ->` with `DEFAULT` segments dropped (docs brand.css contract); Tailwind keys follow the same path. Draft r01 (00006 cms-redesign), values from www tailwind.config.ts + docs src/styles/brand.css (2026-09-26); entries marked `added r01` are new.",
+
+  "black": { "$type": "color", "$value": "#0D0A09", "$description": "page background — header, sidebar, page and footer share it" },
+  "white": { "$type": "color", "$value": "#FFFFFF", "$description": "text on accent-fill, hover of light buttons" },
+
+  "basic": {
+    "$type": "color",
+    "$description": "Brand neutral scale, dark (100) to light (950). Surfaces 100–400, text 700–950.",
+    "100": { "$value": "#0A0A0F", "$description": "sunken surfaces (CMS inputs), text on light/teal surfaces" },
+    "200": { "$value": "#12141A", "$description": "containers: code blocks, dark sections, CMS content blocks" },
+    "300": { "$value": "#1A1C25", "$description": "raised surfaces: inline code, open dropdowns, CMS nested tiles" },
+    "400": { "$value": "#22242E", "$description": "subtle borders, hover surfaces" },
+    "500": { "$value": "#353843", "$description": "control borders" },
+    "600": { "$value": "#484B57", "$description": "disabled" },
+    "700": { "$value": "#6B6B7C", "$description": "form-control borders on dark (3.52:1 on basic-200); NOT text on dark (3.78:1 on black, fails AA) — use 750" },
+    "750": { "$value": "#898B9A", "$description": "added r01 — muted text on dark: 4.58:1 on basic-400, 4.54:1 on the card gradient (derive.py D-muted); control-hover border in the CMS" },
+    "800": { "$value": "#9A9CAA", "$description": "secondary text" },
+    "900": { "$value": "#C8CAD4", "$description": "body text" },
+    "950": { "$value": "#EBEDF2", "$description": "headings, brightest text" }
+  },
+
+  "primary": {
+    "$type": "color",
+    "100": { "$value": "#00ACC1", "$description": "the accent (see accent)" },
+    "200": { "$value": "#00889A", "$description": "accent hover" },
+    "300": { "$value": "#1A3F47", "$description": "dark teal background (selected, accent-subtle on dark)" }
+  },
+  "secondary": {
+    "$type": "color",
+    "100": { "$value": "#00E5FF", "$description": "bright cyan — glows and highlights" },
+    "200": { "$value": "#00B8CC" },
+    "300": { "$value": "#1A4A54" }
+  },
+  "tertiary": {
+    "$type": "color",
+    "100": { "$value": "#0E7C86", "$description": "filled accent surfaces (see accent.fill)" },
+    "200": { "$value": "#0B636B", "$description": "accent-fill hover; accent text on light surfaces" },
+    "300": { "$value": "#1A3136" }
+  },
+  "positive": {
+    "$type": "color",
+    "100": { "$value": "#6AC17F", "$description": "success text / solid fill on dark" },
+    "200": { "$value": "#1E4437", "$description": "success background on dark" }
+  },
+  "negative": {
+    "$type": "color",
+    "100": { "$value": "#ED6C62", "$description": "error text / solid fill on dark" },
+    "200": { "$value": "#611B11", "$description": "error background on dark (www/docs); negative-100 on it is 4.14:1" },
+    "300": { "$value": "#59130A", "$description": "added r01 — error background on dark where negative-100 text sits on it (4.55:1, derive.py D-subtle)" }
+  },
+  "informative": {
+    "$type": "color",
+    "100": { "$value": "#82AFF9", "$description": "info text / solid fill on dark" },
+    "200": { "$value": "#1C3971", "$description": "info background on dark" }
+  },
+  "notice": {
+    "$type": "color",
+    "100": { "$value": "#FEF7E0", "$description": "warning background (light surfaces, www/docs)" },
+    "200": { "$value": "#C6A239", "$description": "warning text / solid fill on dark" },
+    "300": { "$value": "#46380F", "$description": "added r01 — warning background on dark (derive.py D-notice)" }
+  },
+  "additional": {
+    "$type": "color",
+    "$description": "www only; only 300 is live (StarCatcherGame)",
+    "100": { "$value": "#0E7C86" },
+    "200": { "$value": "#E91E63" },
+    "300": { "$value": "#00C853" }
+  },
+
+  "accent": {
+    "$type": "color",
+    "DEFAULT": { "$value": "{primary.100}", "$description": "text, icons, borders, active indicators on dark (7.21:1 on black)" },
+    "fill": { "$value": "{tertiary.100}", "$description": "filled accent surfaces with white text (4.95:1)" }
+  },
+  "on-accent-fill": { "$type": "color", "$value": "{white}" },
+
+  "hairline": { "$type": "color", "$value": "rgba(43, 43, 43, 0.5)", "$description": "dividers and panel borders on black" },
+  "glass": {
+    "$type": "color",
+    "DEFAULT": { "$value": "rgba(126, 126, 126, 0.2)", "$description": "glass buttons and chips" },
+    "hover": { "$value": "rgba(126, 126, 126, 0.32)" },
+    "tint": { "$value": "rgba(126, 126, 126, 0.15)", "$description": "row / pill hover" },
+    "border": { "$value": "rgba(126, 126, 126, 0.4)" }
+  },
+
+  "gradient": {
+    "$type": "gradient",
+    "$description": "CSS gradient strings; the accent gradients expose their stops as colour tokens because each use sets its own direction",
+    "accent": {
+      "from": { "$type": "color", "$value": "#00C2D7" },
+      "to": { "$type": "color", "$value": "#55636D" },
+      "DEFAULT": { "$value": "linear-gradient(180deg, {gradient.accent.from} 0%, {gradient.accent.to} 100%)", "$description": "gradient text, scrollbar thumb" }
+    },
+    "accent-hover": {
+      "from": { "$type": "color", "$value": "{secondary.100}" },
+      "to": { "$type": "color", "$value": "#607D8B" },
+      "DEFAULT": { "$value": "linear-gradient(180deg, {gradient.accent-hover.from} 0%, {gradient.accent-hover.to} 100%)" }
+    },
+    "card": { "$value": "linear-gradient(189.87deg, #161616 45.296%, #252525 127.26%)", "$description": "cards (docs home, www, CMS panel cards — D2)" },
+    "card-dim": { "$value": "linear-gradient(189.87deg, #0D0D0D 45.296%, #1A1A1A 127.26%)" },
+    "icon": { "$value": "linear-gradient(190deg, #120E0D 45%, #01414E 127%)" },
+    "icon-hover": { "$value": "linear-gradient(190deg, #0D1416 30%, #00889A 130%)" },
+    "backdrop": { "$value": "linear-gradient(185.735deg, #0D0A09 57.353%, #01414E 160.64%)" },
+    "backdrop-mobile": { "$value": "linear-gradient(180deg, #0D0A09 0%, #0D0A09 58%, #072830 76%, #0D0A09 92%)" },
+    "fade": { "$value": "linear-gradient(to bottom, transparent 65%, #0D0A09 100%)" }
+  },
+
+  "radius": {
+    "$type": "dimension",
+    "$description": "D5 amended: names follow Tailwind (rounded, rounded-lg … rounded-4xl); base -> Tailwind DEFAULT",
+    "base": { "$value": "4px", "$description": "badges, buttons, inputs, thumbnails, CMS containers (Figma 2/3/4/5)" },
+    "lg": { "$value": "8px", "$description": "inputs (docs), images, small panels" },
+    "xl": { "$value": "12px", "$description": "buttons and icon buttons up to 40 px, icon tiles (Figma 10/12)" },
+    "2xl": { "$value": "16px", "$description": "48 px buttons" },
+    "3xl": { "$value": "24px", "$description": "app cards — CMS panel cards" },
+    "4xl": { "$value": "32px", "$description": "large brand cards (docs home, www)" },
+    "full": { "$value": "9999px", "$description": "chips, toggles, FAB, circles (Figma 16 on 32 px, 19/22/50)" }
+  },
+
+  "space": {
+    "$type": "dimension",
+    "$description": "4 px grid, Tailwind keys (n × 4 px). Tailwind consumers keep their default spacing (identical); CSS consumers get --brand-space-<n>.",
+    "0": { "$value": "0px" },
+    "1": { "$value": "4px" },
+    "2": { "$value": "8px" },
+    "3": { "$value": "12px" },
+    "4": { "$value": "16px" },
+    "5": { "$value": "20px" },
+    "6": { "$value": "24px" },
+    "8": { "$value": "32px" },
+    "10": { "$value": "40px" },
+    "12": { "$value": "48px" },
+    "16": { "$value": "64px" },
+    "30": { "$value": "120px" }
+  },
+
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "brand": { "$value": ["Lexend Deca", "Lexend Deca Fallback: Arial", "Arial", "sans-serif"], "$description": "titles, navigation, cards, descriptions; weights 300/400 only — never bold" },
+      "ui": { "$value": ["Inter", "Inter Fallback: Arial", "Arial", "sans-serif"], "$description": "application UI only (CMS): tables, controls, badges; weights 400–600" },
+      "mono": { "$value": ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"], "$description": "added r01 — code, raw data, SKUs; system stack, no webfont (CMS Atlas uses it 4× raw + an undefined --ff-mono 2×)" }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "light": { "$value": 300 },
+      "regular": { "$value": 400 },
+      "medium": { "$value": 500, "$description": "Inter only" },
+      "semibold": { "$value": 600, "$description": "Inter only" }
+    },
+    "tracking": {
+      "$type": "dimension",
+      "brand": { "$value": "-0.02em", "$description": "Lexend Deca, every size" },
+      "caps": { "$value": "0.03em", "$description": "Inter uppercase labels (table headers, counts)" },
+      "overline": { "$value": "0.04em", "$description": "Inter uppercase overline" }
+    },
+    "fallback": {
+      "$type": "other",
+      "$description": "Metric overrides for the local() fallback faces (capsize 4.1.3 / metrics 4.3.0, Arial). Generators emit @font-face blocks from these.",
+      "inter-arial": { "$value": { "ascent-override": "90.4365%", "descent-override": "22.518%", "line-gap-override": "0%", "size-adjust": "107.1194%" } },
+      "lexend-deca-arial": { "$value": { "ascent-override": "90.9798%", "descent-override": "22.7449%", "line-gap-override": "0%", "size-adjust": "109.9146%" } }
+    }
+  },
+
+  "shadow": {
+    "$type": "shadow",
+    "$description": "Dark elevation shadows; Figma CMS effects match them 1:1. Light-theme shadows are app-level (CMS semantic map).",
+    "sm": { "$value": "0 1px 3px rgba(0, 0, 0, 0.3)", "$description": "Figma: labelled FAB pill" },
+    "md": { "$value": "0 4px 12px rgba(0, 0, 0, 0.4)", "$description": "Figma: FAB" },
+    "lg": { "$value": "0 10px 30px rgba(0, 0, 0, 0.5)" },
+    "down": { "$value": "0 34px 10px -33px rgba(0, 0, 0, 0.5)", "$description": "Figma: gallery tile overlay" }
+  },
+  "glow": {
+    "$type": "shadow",
+    "DEFAULT": { "$value": "0 0 0 1px rgba(0, 229, 255, 0.35), 0 10px 28px -10px rgba(0, 172, 193, 0.55)", "$description": "buttons and cards on hover (STYLEGUIDE §2.3)" },
+    "icon": { "$value": "drop-shadow(0 0 4px rgba(0, 229, 255, 0.42)) drop-shadow(0 0 11px rgba(0, 229, 255, 0.22))", "$type": "other", "$description": "CSS filter value for icons" }
+  },
+
+  "light": {
+    "$type": "color",
+    "$description": "added r01 — steps for app light themes (CMS, Q3). Derived by rule in derive.py, not by eye; www and docs are dark-only and do not use them.",
+    "basic": {
+      "50": { "$value": "#F5F7FC", "$description": "page (L-neutral, L 0.975)" },
+      "100": { "$value": "#EFF1F6", "$description": "raised surface (L 0.958)" },
+      "150": { "$value": "#E9EBF0", "$description": "hover / disabled surface (L 0.94)" },
+      "200": { "$value": "#E1E3E8", "$description": "hairline, subtle border (L 0.915)" },
+      "300": { "$value": "#CFD1D6", "$description": "default border: outline buttons, chips (L 0.86)" },
+      "400": { "$value": "#898A8F", "$description": "form-control border, >= 3:1 on white, page and raised (L-control, L 0.635)" }
+    },
+    "primary": { "50": { "$value": "#D8F9FF", "$description": "accent-subtle on light (L-tint)" } },
+    "positive": {
+      "50": { "$value": "#E2F9E6", "$description": "success background on light (L-tint)" },
+      "600": { "$value": "#1B7A3C", "$description": "success text / fill on light (L-text: 5.39:1 on white, 4.52:1 on light-basic-150)" }
+    },
+    "negative": {
+      "50": { "$value": "#FFEDEB" },
+      "600": { "$value": "#BC3F39", "$description": "5.37:1 on white" }
+    },
+    "informative": {
+      "50": { "$value": "#EBF2FE" },
+      "600": { "$value": "#4069AE", "$description": "5.45:1 on white" }
+    },
+    "notice": {
+      "50": { "$value": "#FBF1D8" },
+      "600": { "$value": "#836601", "$description": "5.43:1 on white" }
+    }
+  }
+}

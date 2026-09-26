@@ -1,0 +1,4 @@
+node_modules/
+
+# Secret scanning (forbidden-names blocklist - local symlink, never committed)
+.gitleaks.toml
