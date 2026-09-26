@@ -1,0 +1,19 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+import { readFileSync } from 'node:fs';
+
+export const readText = (path) => readFileSync(new URL(path, import.meta.url), 'utf8');
+
+export const brandTokens = () => JSON.parse(readText('../tokens/brand.json'));
+
+// Every `--brand-*: value;` declaration of a stylesheet, in order (duplicates kept).
+export const cssDeclarations = (css) =>
+  [...css.matchAll(/(--brand-[\w-]+)\s*:\s*([^;]+);/g)].map(([, name, value]) => [name, value.trim()]);
+
+// Replaces every var(--brand-*) with its value until none is left.
+export function resolveVars(value, vars) {
+  const resolved = value.replace(/var\((--brand-[\w-]+)\)/g, (_, name) => resolveVars(vars.get(name), vars));
+  return resolved.replace(/\s+/g, ' ').toLowerCase();
+}
