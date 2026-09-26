@@ -1,0 +1,130 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --brand-black: #0D0A09; /** page background — header, sidebar, page and footer share it */
+  --brand-white: #FFFFFF; /** text on accent-fill, hover of light buttons */
+  --brand-basic-100: #0A0A0F; /** sunken surfaces (CMS inputs), text on light/teal surfaces */
+  --brand-basic-200: #12141A; /** containers: code blocks, dark sections, CMS content blocks */
+  --brand-basic-300: #1A1C25; /** raised surfaces: inline code, open dropdowns, CMS nested tiles */
+  --brand-basic-400: #22242E; /** subtle borders, hover surfaces */
+  --brand-basic-500: #353843; /** control borders */
+  --brand-basic-600: #484B57; /** disabled */
+  --brand-basic-700: #6B6B7C; /** form-control borders on dark (3.52:1 on basic-200); NOT text on dark (3.78:1 on black, fails AA) — use 750 */
+  --brand-basic-750: #898B9A; /** added r01 — muted text on dark: 4.58:1 on basic-400, 4.54:1 on the card gradient (derive.py D-muted); control-hover border in the CMS */
+  --brand-basic-800: #9A9CAA; /** secondary text */
+  --brand-basic-900: #C8CAD4; /** body text */
+  --brand-basic-950: #EBEDF2; /** headings, brightest text */
+  --brand-primary-100: #00ACC1; /** the accent (see accent) */
+  --brand-primary-200: #00889A; /** accent hover */
+  --brand-primary-300: #1A3F47; /** dark teal background (selected, accent-subtle on dark) */
+  --brand-secondary-100: #00E5FF; /** bright cyan — glows and highlights */
+  --brand-secondary-200: #00B8CC;
+  --brand-secondary-300: #1A4A54;
+  --brand-tertiary-100: #0E7C86; /** filled accent surfaces (see accent.fill) */
+  --brand-tertiary-200: #0B636B; /** accent-fill hover; accent text on light surfaces */
+  --brand-tertiary-300: #1A3136;
+  --brand-positive-100: #6AC17F; /** success text / solid fill on dark */
+  --brand-positive-200: #1E4437; /** success background on dark */
+  --brand-negative-100: #ED6C62; /** error text / solid fill on dark */
+  --brand-negative-200: #611B11; /** error background on dark (www/docs); negative-100 on it is 4.14:1 */
+  --brand-negative-300: #59130A; /** added r01 — error background on dark where negative-100 text sits on it (4.55:1, derive.py D-subtle) */
+  --brand-informative-100: #82AFF9; /** info text / solid fill on dark */
+  --brand-informative-200: #1C3971; /** info background on dark */
+  --brand-notice-100: #FEF7E0; /** warning background (light surfaces, www/docs) */
+  --brand-notice-200: #C6A239; /** warning text / solid fill on dark */
+  --brand-notice-300: #46380F; /** added r01 — warning background on dark (derive.py D-notice) */
+  --brand-additional-100: #0E7C86;
+  --brand-additional-200: #E91E63;
+  --brand-additional-300: #00C853;
+  --brand-hairline: rgba(43, 43, 43, 0.5); /** dividers and panel borders on black */
+  --brand-glass: rgba(126, 126, 126, 0.2); /** glass buttons and chips */
+  --brand-glass-hover: rgba(126, 126, 126, 0.32);
+  --brand-glass-tint: rgba(126, 126, 126, 0.15); /** row / pill hover */
+  --brand-glass-border: rgba(126, 126, 126, 0.4);
+  --brand-gradient-accent-from: #00C2D7;
+  --brand-gradient-accent-to: #55636D;
+  --brand-gradient-accent-hover-to: #607D8B;
+  --brand-gradient-card: linear-gradient(189.87deg, #161616 45.296%, #252525 127.26%); /** cards (docs home, www, CMS panel cards — D2) */
+  --brand-gradient-card-dim: linear-gradient(189.87deg, #0D0D0D 45.296%, #1A1A1A 127.26%);
+  --brand-gradient-icon: linear-gradient(190deg, #120E0D 45%, #01414E 127%);
+  --brand-gradient-icon-hover: linear-gradient(190deg, #0D1416 30%, #00889A 130%);
+  --brand-gradient-backdrop: linear-gradient(185.735deg, #0D0A09 57.353%, #01414E 160.64%);
+  --brand-gradient-backdrop-mobile: linear-gradient(180deg, #0D0A09 0%, #0D0A09 58%, #072830 76%, #0D0A09 92%);
+  --brand-gradient-fade: linear-gradient(to bottom, transparent 65%, #0D0A09 100%);
+  --brand-radius-base: 4px; /** badges, buttons, inputs, thumbnails, CMS containers (Figma 2/3/4/5) */
+  --brand-radius-lg: 8px; /** inputs (docs), images, small panels */
+  --brand-radius-xl: 12px; /** buttons and icon buttons up to 40 px, icon tiles (Figma 10/12) */
+  --brand-radius-2xl: 16px; /** 48 px buttons */
+  --brand-radius-3xl: 24px; /** app cards — CMS panel cards */
+  --brand-radius-4xl: 32px; /** large brand cards (docs home, www) */
+  --brand-radius-full: 9999px; /** chips, toggles, FAB, circles (Figma 16 on 32 px, 19/22/50) */
+  --brand-space-0: 0px;
+  --brand-space-1: 4px;
+  --brand-space-2: 8px;
+  --brand-space-3: 12px;
+  --brand-space-4: 16px;
+  --brand-space-5: 20px;
+  --brand-space-6: 24px;
+  --brand-space-8: 32px;
+  --brand-space-10: 40px;
+  --brand-space-12: 48px;
+  --brand-space-16: 64px;
+  --brand-space-30: 120px;
+  --brand-font-family-brand: 'Lexend Deca', 'Lexend Deca Fallback: Arial', Arial, sans-serif; /** titles, navigation, cards, descriptions; weights 300/400 only — never bold */
+  --brand-font-family-ui: Inter, 'Inter Fallback: Arial', Arial, sans-serif; /** application UI only (CMS): tables, controls, badges; weights 400–600 */
+  --brand-font-family-mono: ui-monospace, SFMono-Regular, Menlo, monospace; /** added r01 — code, raw data, SKUs; system stack, no webfont (CMS Atlas uses it 4× raw + an undefined --ff-mono 2×) */
+  --brand-font-weight-light: 300;
+  --brand-font-weight-regular: 400;
+  --brand-font-weight-medium: 500; /** Inter only */
+  --brand-font-weight-semibold: 600; /** Inter only */
+  --brand-font-tracking-brand: -0.02em; /** Lexend Deca, every size */
+  --brand-font-tracking-caps: 0.03em; /** Inter uppercase labels (table headers, counts) */
+  --brand-font-tracking-overline: 0.04em; /** Inter uppercase overline */
+  --brand-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3); /** Figma: labelled FAB pill */
+  --brand-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4); /** Figma: FAB */
+  --brand-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --brand-shadow-down: 0 34px 10px -33px rgba(0, 0, 0, 0.5); /** Figma: gallery tile overlay */
+  --brand-glow: 0 0 0 1px rgba(0, 229, 255, 0.35), 0 10px 28px -10px rgba(0, 172, 193, 0.55); /** buttons and cards on hover (STYLEGUIDE §2.3) */
+  --brand-glow-icon: drop-shadow(0 0 4px rgba(0, 229, 255, 0.42)) drop-shadow(0 0 11px rgba(0, 229, 255, 0.22)); /** CSS filter value for icons */
+  --brand-light-basic-50: #F5F7FC; /** page (L-neutral, L 0.975) */
+  --brand-light-basic-100: #EFF1F6; /** raised surface (L 0.958) */
+  --brand-light-basic-150: #E9EBF0; /** hover / disabled surface (L 0.94) */
+  --brand-light-basic-200: #E1E3E8; /** hairline, subtle border (L 0.915) */
+  --brand-light-basic-300: #CFD1D6; /** default border: outline buttons, chips (L 0.86) */
+  --brand-light-basic-400: #898A8F; /** form-control border, >= 3:1 on white, page and raised (L-control, L 0.635) */
+  --brand-light-primary-50: #D8F9FF; /** accent-subtle on light (L-tint) */
+  --brand-light-positive-50: #E2F9E6; /** success background on light (L-tint) */
+  --brand-light-positive-600: #1B7A3C; /** success text / fill on light (L-text: 5.39:1 on white, 4.52:1 on light-basic-150) */
+  --brand-light-negative-50: #FFEDEB;
+  --brand-light-negative-600: #BC3F39; /** 5.37:1 on white */
+  --brand-light-informative-50: #EBF2FE;
+  --brand-light-informative-600: #4069AE; /** 5.45:1 on white */
+  --brand-light-notice-50: #FBF1D8;
+  --brand-light-notice-600: #836601; /** 5.43:1 on white */
+  --brand-accent: var(--brand-primary-100); /** text, icons, borders, active indicators on dark (7.21:1 on black) */
+  --brand-accent-fill: var(--brand-tertiary-100); /** filled accent surfaces with white text (4.95:1) */
+  --brand-on-accent-fill: var(--brand-white);
+  --brand-gradient-accent: linear-gradient(180deg, var(--brand-gradient-accent-from) 0%, var(--brand-gradient-accent-to) 100%); /** gradient text, scrollbar thumb */
+  --brand-gradient-accent-hover-from: var(--brand-secondary-100);
+  --brand-gradient-accent-hover: linear-gradient(180deg, var(--brand-gradient-accent-hover-from) 0%, var(--brand-gradient-accent-hover-to) 100%);
+}
+
+@font-face {
+  font-family: 'Inter Fallback: Arial';
+  src: local(Arial);
+  ascent-override: 90.4365%;
+  descent-override: 22.518%;
+  line-gap-override: 0%;
+  size-adjust: 107.1194%;
+}
+
+@font-face {
+  font-family: 'Lexend Deca Fallback: Arial';
+  src: local(Arial);
+  ascent-override: 90.9798%;
+  descent-override: 22.7449%;
+  line-gap-override: 0%;
+  size-adjust: 109.9146%;
+}
