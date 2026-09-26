@@ -16,7 +16,7 @@
   },
   "scripts": {
     "build": "node build/config.js",
-    "check": "npm run build && git diff --exit-code dist/",
+    "check": "npm run build && git diff --exit-code dist/ && test -z \"$(git status --porcelain dist/)\"",
     "test": "node --test test/*.test.js"
   },
   "engines": {

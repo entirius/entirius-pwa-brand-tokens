@@ -2,6 +2,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
+import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
 export const readText = (path) => readFileSync(new URL(path, import.meta.url), 'utf8');
@@ -14,6 +15,9 @@ export const cssDeclarations = (css) =>
 
 // Replaces every var(--brand-*) with its value until none is left.
 export function resolveVars(value, vars) {
-  const resolved = value.replace(/var\((--brand-[\w-]+)\)/g, (_, name) => resolveVars(vars.get(name), vars));
+  const resolved = value.replace(/var\((--brand-[\w-]+)\)/g, (_, name) => {
+    assert.ok(vars.has(name), `var(${name}) is not defined`);
+    return resolveVars(vars.get(name), vars);
+  });
   return resolved.replace(/\s+/g, ' ').toLowerCase();
 }
