@@ -29,14 +29,24 @@ CSS — import once, then reference the vars:
 .button { background: var(--brand-accent-fill); border-radius: var(--brand-radius-xl); }
 ```
 
-SCSS — every value is a `var(--brand-*)` reference, so load `tokens.css` once as well:
+SCSS — every value is a `var(--brand-*)` reference, so load `tokens.css` once as well. Dart Sass resolves the
+package through the `pkg:` scheme and its `NodePackageImporter` (`sass --pkg-importer=node` on the CLI); a bare
+`@use '@entirius/brand-tokens/tokens.scss'` does not resolve:
 
 ```scss
 @use 'sass:map';
-@use '@entirius/brand-tokens/tokens.scss' as brand;
+@use 'pkg:@entirius/brand-tokens/tokens.scss' as brand;
 
 .button { background: map.get(brand.$brand, 'accent', 'fill'); color: brand.$brand-white; }
 ```
+
+```js
+import { NodePackageImporter, compile } from 'sass';
+
+compile('app.scss', { importers: [new NodePackageImporter()] });
+```
+
+webpack's `sass-loader` needs the same importer in its `sassOptions` (`importers: [new NodePackageImporter()]`).
 
 Tailwind:
 
@@ -61,6 +71,11 @@ class and a var of the same name carry the same value.
 | `glass.tint` | `--brand-glass-tint` | `bg-glass-tint` |
 | `gradient.card` | `--brand-gradient-card` | `bg-gradient-card` |
 | `radius.base` / `radius.2xl` | `--brand-radius-base` / `--brand-radius-2xl` | `rounded` / `rounded-2xl` |
+
+## Radius unit
+
+Radii are px. `radius.4xl` is `32px`, which equals entirius.com's `rounded-4xl` (`2rem`) at the default 16 px root.
+The px value is deliberate — do not rewrite it to rem.
 
 ## Change a value
 

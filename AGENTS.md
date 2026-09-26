@@ -9,7 +9,7 @@ Style Dictionary 4 into `dist/tokens.css`, `dist/_tokens.scss` and `dist/tailwin
 |---|---|
 | `npm ci` | install dev dependencies (Node 22, `.nvmrc`) |
 | `npm run build` | regenerate `dist/` from `tokens/brand.json` |
-| `npm test` | `node:test` suite: naming rule, preset shape, SCSS compile, docs parity |
+| `npm test` | `node:test` suite: naming rule, fallback faces, preset shape, SCSS compile through `pkg:`, docs parity |
 | `DOCS_BRAND_CSS=<path> npm test` | also checks every `--brand-*` var of the docs `brand.css` against `dist/tokens.css` |
 | `npm run check` | build, then `git diff --exit-code dist/` — fails when `dist/` drifts from the source |
 
@@ -25,7 +25,8 @@ Style Dictionary 4 into `dist/tokens.css`, `dist/_tokens.scss` and `dist/tailwin
 - Never edit `dist/` by hand; commit it together with the `brand.json` change that produced it.
 - No `postinstall`/`prepare` scripts and no runtime dependencies: consumers install from git.
 - Build code: `build/config.js` + one custom format per file in `build/formats/`.
-- English only; MPL-2.0 header on JS source files.
+- English only; MPL-2.0 header on JS source files (pre-commit `insert-license`) and on generated `dist/` files
+  (the `mpl` file header in `build/config.js`).
 - Git flow: `master` + `develop`, changes land via PR. Release = bump `version`, move the `CHANGELOG.md` section to
   the release, tag `vX.Y.Z` after the PR merges. Consumers pin the tag.
 - Default: do not commit — git is the user's call.

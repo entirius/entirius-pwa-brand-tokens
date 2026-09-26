@@ -16,3 +16,11 @@ All notable changes to this project will be documented in this file.
 - `dist/tailwind-preset.js`: Tailwind preset with colours, `gradient-*` background images, radius scale
   (`base` → `DEFAULT`), font families and shadows; covers the brand keys of entirius.com `tailwind.config.ts`.
 - `npm run check` and CI: the build must reproduce the committed `dist/`.
+- Repo tooling: pre-commit with gitleaks v8.30.0, the canonical gitleaks config guards and `insert-license`
+  (MPL-2.0 header); generated `dist/` files carry the MPL-2.0 header too.
+- Tests: `tokens.scss` compiles through `pkg:@entirius/brand-tokens` with Sass's `NodePackageImporter`, and every
+  `* Fallback: *` family named in `font.family.*` has a matching `@font-face` block.
+
+### Notes
+
+- `radius.4xl` is `32px`, equal to entirius.com's `2rem` at the default 16 px root. Radii stay px on purpose.
