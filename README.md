@@ -77,10 +77,17 @@ class and a var of the same name carry the same value.
 Radii are px. `radius.4xl` is `32px`, which equals entirius.com's `rounded-4xl` (`2rem`) at the default 16 px root.
 The px value is deliberate — do not rewrite it to rem.
 
+## Light theme steps
+
+`light.neutral.*` (50–900) is a grey scale with no blue cast for page, surfaces, borders and text; `light.tint.*`
+holds low-chroma backgrounds for accent and status roles. On `light.tint.primary` only `tertiary-200` text passes AA
+(5.87:1) — `tertiary-100` and `primary-200` do not.
+
 ## Change a value
 
 1. Edit `tokens/brand.json` (never `dist/`).
-2. `npm run build`, then `npm test`.
+2. `npm run build`, then `npm test`. The tests hold the baseline CSS vars and Tailwind preset values against frozen
+   snapshots in `test/fixtures/`: a changed value fails until the snapshot is updated on a release.
 3. Commit `brand.json` and `dist/` together. CI runs `npm run check`, which fails when `dist/` drifts from the source.
 
 Licence: MPL-2.0.

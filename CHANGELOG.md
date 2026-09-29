@@ -24,6 +24,11 @@ All notable changes to this project will be documented in this file.
   steps for app light themes — a grey scale with no blue cast for page, surfaces, borders and text, and subtle
   backgrounds at half the chroma of the `light.*.50` tints. Additive: every existing var keeps its name and value
   (test against a snapshot of the previous `dist/tokens.css`).
+- Test: every value of `dist/tailwind-preset.js` is held against a snapshot too, so a preset drift fails like a CSS one.
+
+### Changed
+
+- `light.neutral` and `light.tint` group descriptions say what the steps are for; no value changes.
 
 ### Notes
 

@@ -9,7 +9,7 @@ Style Dictionary 4 into `dist/tokens.css`, `dist/_tokens.scss` and `dist/tailwin
 |---|---|
 | `npm ci` | install dev dependencies (Node 22, `.nvmrc`) |
 | `npm run build` | regenerate `dist/` from `tokens/brand.json` |
-| `npm test` | `node:test` suite: naming rule, fallback faces, preset shape, SCSS compile through `pkg:`, docs parity |
+| `npm test` | `node:test` suite: naming rule, fallback faces, preset shape, SCSS compile through `pkg:`, docs parity, baseline snapshots (the baseline vars of `dist/tokens.css` and values of `dist/tailwind-preset.js` keep their values) |
 | `DOCS_BRAND_CSS=<path> npm test` | also checks every `--brand-*` var of the docs `brand.css` against `dist/tokens.css` |
 | `npm run check` | build, then `git diff --exit-code dist/` — fails when `dist/` drifts from the source |
 
@@ -22,6 +22,8 @@ Style Dictionary 4 into `dist/tokens.css`, `dist/_tokens.scss` and `dist/tailwin
 
 ## Conventions
 
+- `test/fixtures/*-baseline.json` are frozen snapshots: extend them only on a release, never edit them to make a
+  failing test pass.
 - Never edit `dist/` by hand; commit it together with the `brand.json` change that produced it.
 - No `postinstall`/`prepare` scripts and no runtime dependencies: consumers install from git.
 - Build code: `build/config.js` + one custom format per file in `build/formats/`.
