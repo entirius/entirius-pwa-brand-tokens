@@ -206,7 +206,7 @@
       "600": { "$value": "#836601", "$description": "5.43:1 on white" }
     },
     "neutral": {
-      "$description": "added 58a — calmer light theme: grey scale with no blue cast, light (50) to dark (900); contrast on light-neutral-50 / light-neutral-150",
+      "$description": "calmer light-theme greys with no blue cast, light (50) to dark (900); contrast on light-neutral-50 / light-neutral-150",
       "50": { "$value": "#FAFAFB", "$description": "off-white surface: base, card, sunken" },
       "100": { "$value": "#F4F5F7", "$description": "raised surface" },
       "150": { "$value": "#F1F2F4", "$description": "page: shell, header, sidebar" },
@@ -219,7 +219,7 @@
       "900": { "$value": "#1E222B", "$description": "strong text (15.26:1 / 14.21:1)" }
     },
     "tint": {
-      "$description": "added 58a — calmer light theme: subtle backgrounds, same OKLCH L and hue as the light-*-50 tints, chroma halved",
+      "$description": "low-chroma light-theme backgrounds, same OKLCH L and hue as the light-*-50 tints, chroma halved",
       "primary": { "$value": "#DDEFF1", "$description": "desaturated teal: accent-subtle (tertiary-200 text 5.87:1)" },
       "positive": { "$value": "#EAF5EC", "$description": "success background (light-positive-600 text 4.82:1)" },
       "negative": { "$value": "#F8EFEE", "$description": "error background (light-negative-600 text 4.75:1)" },
