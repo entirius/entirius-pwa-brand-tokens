@@ -1,5 +1,5 @@
 {
-  "$description": "Entirius brand primitives — the only source of brand values for www, docs and the CMS. DTCG format (https://tr.designtokens.org/format/). Generated names: CSS `--brand-<path joined by ->` with `DEFAULT` segments dropped (docs brand.css contract); Tailwind keys follow the same path. Draft r01 (00006 cms-redesign), values from www tailwind.config.ts + docs src/styles/brand.css (2026-09-26); entries marked `added r01` are new.",
+  "$description": "Entirius brand primitives — the only source of brand values for www, docs and the CMS. DTCG format (https://tr.designtokens.org/format/). Generated names: CSS `--brand-<path joined by ->` with `DEFAULT` segments dropped (docs brand.css contract); Tailwind keys follow the same path. Values first taken from the www Tailwind theme and the docs brand.css (2026-09-26).",
 
   "black": { "$type": "color", "$value": "#0D0A09", "$description": "page background — header, sidebar, page and footer share it" },
   "white": { "$type": "color", "$value": "#FFFFFF", "$description": "text on accent-fill, hover of light buttons" },
@@ -14,7 +14,7 @@
     "500": { "$value": "#353843", "$description": "control borders" },
     "600": { "$value": "#484B57", "$description": "disabled" },
     "700": { "$value": "#6B6B7C", "$description": "form-control borders on dark (3.52:1 on basic-200); NOT text on dark (3.78:1 on black, fails AA) — use 750" },
-    "750": { "$value": "#898B9A", "$description": "added r01 — muted text on dark: 4.58:1 on basic-400, 4.54:1 on the card gradient (derive.py D-muted); control-hover border in the CMS" },
+    "750": { "$value": "#898B9A", "$description": "muted text on dark: 4.58:1 on basic-400, 4.54:1 on the card gradient; control-hover border in the CMS" },
     "800": { "$value": "#9A9CAA", "$description": "secondary text" },
     "900": { "$value": "#C8CAD4", "$description": "body text" },
     "950": { "$value": "#EBEDF2", "$description": "headings, brightest text" }
@@ -47,7 +47,7 @@
     "$type": "color",
     "100": { "$value": "#ED6C62", "$description": "error text / solid fill on dark" },
     "200": { "$value": "#611B11", "$description": "error background on dark (www/docs); negative-100 on it is 4.14:1" },
-    "300": { "$value": "#59130A", "$description": "added r01 — error background on dark where negative-100 text sits on it (4.55:1, derive.py D-subtle)" }
+    "300": { "$value": "#59130A", "$description": "error background on dark where negative-100 text sits on it (4.55:1)" }
   },
   "informative": {
     "$type": "color",
@@ -58,7 +58,7 @@
     "$type": "color",
     "100": { "$value": "#FEF7E0", "$description": "warning background (light surfaces, www/docs)" },
     "200": { "$value": "#C6A239", "$description": "warning text / solid fill on dark" },
-    "300": { "$value": "#46380F", "$description": "added r01 — warning background on dark (derive.py D-notice)" }
+    "300": { "$value": "#46380F", "$description": "warning background on dark" }
   },
   "additional": {
     "$type": "color",
@@ -140,7 +140,7 @@
       "$type": "fontFamily",
       "brand": { "$value": ["Lexend Deca", "Lexend Deca Fallback: Arial", "Arial", "sans-serif"], "$description": "titles, navigation, cards, descriptions; weights 300/400 only — never bold" },
       "ui": { "$value": ["Inter", "Inter Fallback: Arial", "Arial", "sans-serif"], "$description": "application UI only (CMS): tables, controls, badges; weights 400–600" },
-      "mono": { "$value": ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"], "$description": "added r01 — code, raw data, SKUs; system stack, no webfont (CMS Atlas uses it 4× raw + an undefined --ff-mono 2×)" }
+      "mono": { "$value": ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"], "$description": "code, raw data, SKUs; system stack, no webfont" }
     },
     "weight": {
       "$type": "fontWeight",
@@ -179,7 +179,7 @@
 
   "light": {
     "$type": "color",
-    "$description": "added r01 — steps for app light themes (CMS, Q3). Derived by rule in derive.py, not by eye; www and docs are dark-only and do not use them.",
+    "$description": "steps for app light themes (the CMS). Derived by rule from the dark scale for contrast, not by eye; www and docs are dark-only and do not use them.",
     "basic": {
       "50": { "$value": "#F5F7FC", "$description": "page (L-neutral, L 0.975)" },
       "100": { "$value": "#EFF1F6", "$description": "raised surface (L 0.958)" },

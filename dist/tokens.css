@@ -16,7 +16,7 @@
   --brand-basic-500: #353843; /** control borders */
   --brand-basic-600: #484B57; /** disabled */
   --brand-basic-700: #6B6B7C; /** form-control borders on dark (3.52:1 on basic-200); NOT text on dark (3.78:1 on black, fails AA) — use 750 */
-  --brand-basic-750: #898B9A; /** added r01 — muted text on dark: 4.58:1 on basic-400, 4.54:1 on the card gradient (derive.py D-muted); control-hover border in the CMS */
+  --brand-basic-750: #898B9A; /** muted text on dark: 4.58:1 on basic-400, 4.54:1 on the card gradient; control-hover border in the CMS */
   --brand-basic-800: #9A9CAA; /** secondary text */
   --brand-basic-900: #C8CAD4; /** body text */
   --brand-basic-950: #EBEDF2; /** headings, brightest text */
@@ -33,12 +33,12 @@
   --brand-positive-200: #1E4437; /** success background on dark */
   --brand-negative-100: #ED6C62; /** error text / solid fill on dark */
   --brand-negative-200: #611B11; /** error background on dark (www/docs); negative-100 on it is 4.14:1 */
-  --brand-negative-300: #59130A; /** added r01 — error background on dark where negative-100 text sits on it (4.55:1, derive.py D-subtle) */
+  --brand-negative-300: #59130A; /** error background on dark where negative-100 text sits on it (4.55:1) */
   --brand-informative-100: #82AFF9; /** info text / solid fill on dark */
   --brand-informative-200: #1C3971; /** info background on dark */
   --brand-notice-100: #FEF7E0; /** warning background (light surfaces, www/docs) */
   --brand-notice-200: #C6A239; /** warning text / solid fill on dark */
-  --brand-notice-300: #46380F; /** added r01 — warning background on dark (derive.py D-notice) */
+  --brand-notice-300: #46380F; /** warning background on dark */
   --brand-additional-100: #0E7C86;
   --brand-additional-200: #E91E63;
   --brand-additional-300: #00C853;
@@ -78,7 +78,7 @@
   --brand-space-30: 120px;
   --brand-font-family-brand: 'Lexend Deca', 'Lexend Deca Fallback: Arial', Arial, sans-serif; /** titles, navigation, cards, descriptions; weights 300/400 only — never bold */
   --brand-font-family-ui: Inter, 'Inter Fallback: Arial', Arial, sans-serif; /** application UI only (CMS): tables, controls, badges; weights 400–600 */
-  --brand-font-family-mono: ui-monospace, SFMono-Regular, Menlo, monospace; /** added r01 — code, raw data, SKUs; system stack, no webfont (CMS Atlas uses it 4× raw + an undefined --ff-mono 2×) */
+  --brand-font-family-mono: ui-monospace, SFMono-Regular, Menlo, monospace; /** code, raw data, SKUs; system stack, no webfont */
   --brand-font-weight-light: 300;
   --brand-font-weight-regular: 400;
   --brand-font-weight-medium: 500; /** Inter only */

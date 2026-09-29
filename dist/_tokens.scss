@@ -16,7 +16,7 @@ $brand-basic-400: var(--brand-basic-400) !default; // subtle borders, hover surf
 $brand-basic-500: var(--brand-basic-500) !default; // control borders
 $brand-basic-600: var(--brand-basic-600) !default; // disabled
 $brand-basic-700: var(--brand-basic-700) !default; // form-control borders on dark (3.52:1 on basic-200); NOT text on dark (3.78:1 on black, fails AA) — use 750
-$brand-basic-750: var(--brand-basic-750) !default; // added r01 — muted text on dark: 4.58:1 on basic-400, 4.54:1 on the card gradient (derive.py D-muted); control-hover border in the CMS
+$brand-basic-750: var(--brand-basic-750) !default; // muted text on dark: 4.58:1 on basic-400, 4.54:1 on the card gradient; control-hover border in the CMS
 $brand-basic-800: var(--brand-basic-800) !default; // secondary text
 $brand-basic-900: var(--brand-basic-900) !default; // body text
 $brand-basic-950: var(--brand-basic-950) !default; // headings, brightest text
@@ -33,12 +33,12 @@ $brand-positive-100: var(--brand-positive-100) !default; // success text / solid
 $brand-positive-200: var(--brand-positive-200) !default; // success background on dark
 $brand-negative-100: var(--brand-negative-100) !default; // error text / solid fill on dark
 $brand-negative-200: var(--brand-negative-200) !default; // error background on dark (www/docs); negative-100 on it is 4.14:1
-$brand-negative-300: var(--brand-negative-300) !default; // added r01 — error background on dark where negative-100 text sits on it (4.55:1, derive.py D-subtle)
+$brand-negative-300: var(--brand-negative-300) !default; // error background on dark where negative-100 text sits on it (4.55:1)
 $brand-informative-100: var(--brand-informative-100) !default; // info text / solid fill on dark
 $brand-informative-200: var(--brand-informative-200) !default; // info background on dark
 $brand-notice-100: var(--brand-notice-100) !default; // warning background (light surfaces, www/docs)
 $brand-notice-200: var(--brand-notice-200) !default; // warning text / solid fill on dark
-$brand-notice-300: var(--brand-notice-300) !default; // added r01 — warning background on dark (derive.py D-notice)
+$brand-notice-300: var(--brand-notice-300) !default; // warning background on dark
 $brand-additional-100: var(--brand-additional-100) !default;
 $brand-additional-200: var(--brand-additional-200) !default;
 $brand-additional-300: var(--brand-additional-300) !default;
@@ -84,7 +84,7 @@ $brand-space-16: var(--brand-space-16) !default;
 $brand-space-30: var(--brand-space-30) !default;
 $brand-font-family-brand: var(--brand-font-family-brand) !default; // titles, navigation, cards, descriptions; weights 300/400 only — never bold
 $brand-font-family-ui: var(--brand-font-family-ui) !default; // application UI only (CMS): tables, controls, badges; weights 400–600
-$brand-font-family-mono: var(--brand-font-family-mono) !default; // added r01 — code, raw data, SKUs; system stack, no webfont (CMS Atlas uses it 4× raw + an undefined --ff-mono 2×)
+$brand-font-family-mono: var(--brand-font-family-mono) !default; // code, raw data, SKUs; system stack, no webfont
 $brand-font-weight-light: var(--brand-font-weight-light) !default;
 $brand-font-weight-regular: var(--brand-font-weight-regular) !default;
 $brand-font-weight-medium: var(--brand-font-weight-medium) !default; // Inter only
