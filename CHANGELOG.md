@@ -20,6 +20,10 @@ All notable changes to this project will be documented in this file.
   (MPL-2.0 header); generated `dist/` files carry the MPL-2.0 header too.
 - Tests: `tokens.scss` compiles through `pkg:@entirius/brand-tokens` with Sass's `NodePackageImporter`, and every
   `* Fallback: *` family named in `font.family.*` has a matching `@font-face` block.
+- `light.neutral.*` (50–900) and `light.tint.*` (`primary`, `positive`, `negative`, `informative`, `notice`): calmer
+  steps for app light themes — a grey scale with no blue cast for page, surfaces, borders and text, and subtle
+  backgrounds at half the chroma of the `light.*.50` tints. Additive: every existing var keeps its name and value
+  (test against a snapshot of the previous `dist/tokens.css`).
 
 ### Notes
 
