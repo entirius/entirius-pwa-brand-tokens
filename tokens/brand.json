@@ -204,6 +204,27 @@
     "notice": {
       "50": { "$value": "#FBF1D8" },
       "600": { "$value": "#836601", "$description": "5.43:1 on white" }
+    },
+    "neutral": {
+      "$description": "added 58a — calmer light theme: grey scale with no blue cast, light (50) to dark (900); contrast on light-neutral-50 / light-neutral-150",
+      "50": { "$value": "#FAFAFB", "$description": "off-white surface: base, card, sunken" },
+      "100": { "$value": "#F4F5F7", "$description": "raised surface" },
+      "150": { "$value": "#F1F2F4", "$description": "page: shell, header, sidebar" },
+      "200": { "$value": "#EBECEF", "$description": "hover / disabled surface" },
+      "300": { "$value": "#E1E3E7", "$description": "hairline, subtle border" },
+      "400": { "$value": "#CDD0D6", "$description": "default border: cards keep a visible edge on the page" },
+      "600": { "$value": "#646A78", "$description": "muted text (5.20:1 / 4.84:1)" },
+      "700": { "$value": "#4F5563", "$description": "secondary text (7.16:1 / 6.67:1)" },
+      "800": { "$value": "#2E333D", "$description": "body text (12.15:1 / 11.31:1)" },
+      "900": { "$value": "#1E222B", "$description": "strong text (15.26:1 / 14.21:1)" }
+    },
+    "tint": {
+      "$description": "added 58a — calmer light theme: subtle backgrounds, same OKLCH L and hue as the light-*-50 tints, chroma halved",
+      "primary": { "$value": "#DDEFF1", "$description": "desaturated teal: accent-subtle (tertiary-200 text 5.87:1)" },
+      "positive": { "$value": "#EAF5EC", "$description": "success background (light-positive-600 text 4.82:1)" },
+      "negative": { "$value": "#F8EFEE", "$description": "error background (light-negative-600 text 4.75:1)" },
+      "informative": { "$value": "#EEF2F8", "$description": "info background (light-informative-600 text 4.86:1)" },
+      "notice": { "$value": "#F6F1E5", "$description": "warning background (light-notice-600 text 4.82:1)" }
     }
   }
 }

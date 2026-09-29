@@ -102,6 +102,25 @@ export default {
           "notice": {
             "50": "#FBF1D8",
             "600": "#836601"
+          },
+          "neutral": {
+            "50": "#FAFAFB",
+            "100": "#F4F5F7",
+            "150": "#F1F2F4",
+            "200": "#EBECEF",
+            "300": "#E1E3E7",
+            "400": "#CDD0D6",
+            "600": "#646A78",
+            "700": "#4F5563",
+            "800": "#2E333D",
+            "900": "#1E222B"
+          },
+          "tint": {
+            "primary": "#DDEFF1",
+            "positive": "#EAF5EC",
+            "negative": "#F8EFEE",
+            "informative": "#EEF2F8",
+            "notice": "#F6F1E5"
           }
         }
       },

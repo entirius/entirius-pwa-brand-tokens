@@ -113,6 +113,21 @@ $brand-light-informative-50: var(--brand-light-informative-50) !default;
 $brand-light-informative-600: var(--brand-light-informative-600) !default; // 5.45:1 on white
 $brand-light-notice-50: var(--brand-light-notice-50) !default;
 $brand-light-notice-600: var(--brand-light-notice-600) !default; // 5.43:1 on white
+$brand-light-neutral-50: var(--brand-light-neutral-50) !default; // off-white surface: base, card, sunken
+$brand-light-neutral-100: var(--brand-light-neutral-100) !default; // raised surface
+$brand-light-neutral-150: var(--brand-light-neutral-150) !default; // page: shell, header, sidebar
+$brand-light-neutral-200: var(--brand-light-neutral-200) !default; // hover / disabled surface
+$brand-light-neutral-300: var(--brand-light-neutral-300) !default; // hairline, subtle border
+$brand-light-neutral-400: var(--brand-light-neutral-400) !default; // default border: cards keep a visible edge on the page
+$brand-light-neutral-600: var(--brand-light-neutral-600) !default; // muted text (5.20:1 / 4.84:1)
+$brand-light-neutral-700: var(--brand-light-neutral-700) !default; // secondary text (7.16:1 / 6.67:1)
+$brand-light-neutral-800: var(--brand-light-neutral-800) !default; // body text (12.15:1 / 11.31:1)
+$brand-light-neutral-900: var(--brand-light-neutral-900) !default; // strong text (15.26:1 / 14.21:1)
+$brand-light-tint-primary: var(--brand-light-tint-primary) !default; // desaturated teal: accent-subtle (tertiary-200 text 5.87:1)
+$brand-light-tint-positive: var(--brand-light-tint-positive) !default; // success background (light-positive-600 text 4.82:1)
+$brand-light-tint-negative: var(--brand-light-tint-negative) !default; // error background (light-negative-600 text 4.75:1)
+$brand-light-tint-informative: var(--brand-light-tint-informative) !default; // info background (light-informative-600 text 4.86:1)
+$brand-light-tint-notice: var(--brand-light-tint-notice) !default; // warning background (light-notice-600 text 4.82:1)
 
 $brand: (
   'black': $brand-black,
@@ -277,6 +292,25 @@ $brand: (
     'notice': (
       '50': $brand-light-notice-50,
       '600': $brand-light-notice-600
+    ),
+    'neutral': (
+      '50': $brand-light-neutral-50,
+      '100': $brand-light-neutral-100,
+      '150': $brand-light-neutral-150,
+      '200': $brand-light-neutral-200,
+      '300': $brand-light-neutral-300,
+      '400': $brand-light-neutral-400,
+      '600': $brand-light-neutral-600,
+      '700': $brand-light-neutral-700,
+      '800': $brand-light-neutral-800,
+      '900': $brand-light-neutral-900
+    ),
+    'tint': (
+      'primary': $brand-light-tint-primary,
+      'positive': $brand-light-tint-positive,
+      'negative': $brand-light-tint-negative,
+      'informative': $brand-light-tint-informative,
+      'notice': $brand-light-tint-notice
     )
   )
 );

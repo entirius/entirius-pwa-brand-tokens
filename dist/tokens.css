@@ -107,6 +107,21 @@
   --brand-light-informative-600: #4069AE; /** 5.45:1 on white */
   --brand-light-notice-50: #FBF1D8;
   --brand-light-notice-600: #836601; /** 5.43:1 on white */
+  --brand-light-neutral-50: #FAFAFB; /** off-white surface: base, card, sunken */
+  --brand-light-neutral-100: #F4F5F7; /** raised surface */
+  --brand-light-neutral-150: #F1F2F4; /** page: shell, header, sidebar */
+  --brand-light-neutral-200: #EBECEF; /** hover / disabled surface */
+  --brand-light-neutral-300: #E1E3E7; /** hairline, subtle border */
+  --brand-light-neutral-400: #CDD0D6; /** default border: cards keep a visible edge on the page */
+  --brand-light-neutral-600: #646A78; /** muted text (5.20:1 / 4.84:1) */
+  --brand-light-neutral-700: #4F5563; /** secondary text (7.16:1 / 6.67:1) */
+  --brand-light-neutral-800: #2E333D; /** body text (12.15:1 / 11.31:1) */
+  --brand-light-neutral-900: #1E222B; /** strong text (15.26:1 / 14.21:1) */
+  --brand-light-tint-primary: #DDEFF1; /** desaturated teal: accent-subtle (tertiary-200 text 5.87:1) */
+  --brand-light-tint-positive: #EAF5EC; /** success background (light-positive-600 text 4.82:1) */
+  --brand-light-tint-negative: #F8EFEE; /** error background (light-negative-600 text 4.75:1) */
+  --brand-light-tint-informative: #EEF2F8; /** info background (light-informative-600 text 4.86:1) */
+  --brand-light-tint-notice: #F6F1E5; /** warning background (light-notice-600 text 4.82:1) */
   --brand-accent: var(--brand-primary-100); /** text, icons, borders, active indicators on dark (7.21:1 on black) */
   --brand-accent-fill: var(--brand-tertiary-100); /** filled accent surfaces with white text (4.95:1) */
   --brand-on-accent-fill: var(--brand-white);
