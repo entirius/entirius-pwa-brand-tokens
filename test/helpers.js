@@ -13,6 +13,12 @@ export const brandTokens = () => JSON.parse(readText('../tokens/brand.json'));
 export const cssDeclarations = (css) =>
   [...css.matchAll(/(--brand-[\w-]+)\s*:\s*([^;]+);/g)].map(([, name, value]) => [name, value.trim()]);
 
+// Every leaf of a nested object, dotted key path → value (`colors.basic.100` → `#0A0A0F`).
+export const flatten = (node, path = []) =>
+  Object.entries(node).flatMap(([key, value]) =>
+    typeof value === 'object' ? flatten(value, [...path, key]) : [[[...path, key].join('.'), value]],
+  );
+
 // Replaces every var(--brand-*) with its value until none is left.
 export function resolveVars(value, vars) {
   const resolved = value.replace(/var\((--brand-[\w-]+)\)/g, (_, name) => {
