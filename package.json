@@ -1,0 +1,33 @@
+{
+  "name": "@entirius/brand-tokens",
+  "version": "0.1.0",
+  "description": "Entirius brand tokens: one brand.json built into CSS variables, SCSS and a Tailwind preset",
+  "license": "MPL-2.0",
+  "type": "module",
+  "files": [
+    "dist",
+    "tokens"
+  ],
+  "exports": {
+    "./tokens.css": "./dist/tokens.css",
+    "./tokens.scss": "./dist/_tokens.scss",
+    "./tailwind-preset": "./dist/tailwind-preset.js",
+    "./tokens.json": "./tokens/brand.json"
+  },
+  "scripts": {
+    "build": "node build/config.js",
+    "check": "npm run build && git diff --exit-code dist/ && test -z \"$(git status --porcelain dist/)\"",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20.19"
+  },
+  "devDependencies": {
+    "sass": "^1.105.0",
+    "style-dictionary": "^4.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/entirius/entirius-pwa-brand-tokens.git"
+  }
+}
