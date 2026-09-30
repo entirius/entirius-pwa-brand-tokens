@@ -1,4 +1,4 @@
-# entirius-brand-tokens
+# entirius-pwa-brand-tokens
 
 The Entirius brand values in one place: `tokens/brand.json` builds into CSS variables, SCSS and a Tailwind preset,
 consumed by the CMS, the docs portal and entirius.com. Brand rules and roles live in `STYLEGUIDE-GUIDE.md` in the
@@ -9,7 +9,7 @@ consumed by the CMS, the docs portal and entirius.com. Brand rules and roles liv
 No registry: install it as a git dependency pinned to a tag. `dist/` is committed, so nothing builds on install.
 
 ```bash
-npm install github:entirius/entirius-brand-tokens#v0.1.0
+npm install github:entirius/entirius-pwa-brand-tokens#v0.1.0
 ```
 
 ## Use

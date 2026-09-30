@@ -1,6 +1,6 @@
 # AGENTS.md
 
-entirius-brand-tokens — `@entirius/brand-tokens`: the Entirius brand values in `tokens/brand.json` (DTCG), built by
+entirius-pwa-brand-tokens — `@entirius/brand-tokens`: the Entirius brand values in `tokens/brand.json` (DTCG), built by
 Style Dictionary 4 into `dist/tokens.css`, `dist/_tokens.scss` and `dist/tailwind-preset.js`.
 
 ## Commands

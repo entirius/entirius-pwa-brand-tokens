@@ -20,10 +20,14 @@
     "test": "node --test test/*.test.js"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=20.19"
   },
   "devDependencies": {
     "sass": "^1.105.0",
     "style-dictionary": "^4.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/entirius/entirius-pwa-brand-tokens.git"
   }
 }
