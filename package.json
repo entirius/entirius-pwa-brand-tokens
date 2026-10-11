@@ -29,5 +29,17 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/entirius/entirius-pwa-brand-tokens.git"
+  },
+  "keywords": [
+    "entirius",
+    "design-tokens",
+    "brand",
+    "css-variables",
+    "scss",
+    "tailwind"
+  ],
+  "homepage": "https://docs.entirius.com/",
+  "bugs": {
+    "url": "https://github.com/entirius/entirius-pwa-brand-tokens/issues"
   }
 }
