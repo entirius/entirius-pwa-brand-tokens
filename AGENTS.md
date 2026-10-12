@@ -1,7 +1,7 @@
 # AGENTS.md
 
 entirius-pwa-brand-tokens — `@entirius/brand-tokens`: the Entirius brand values in `tokens/brand.json` (DTCG), built by
-Style Dictionary 4 into `dist/tokens.css`, `dist/_tokens.scss` and `dist/tailwind-preset.js`.
+Style Dictionary into `dist/tokens.css`, `dist/_tokens.scss` and `dist/tailwind-preset.js`.
 
 ## Commands
 
@@ -12,13 +12,6 @@ Style Dictionary 4 into `dist/tokens.css`, `dist/_tokens.scss` and `dist/tailwin
 | `npm test` | `node:test` suite: naming rule, fallback faces, preset shape, SCSS compile through `pkg:`, docs parity, baseline snapshots (the baseline vars of `dist/tokens.css` and values of `dist/tailwind-preset.js` keep their values) |
 | `DOCS_BRAND_CSS=<path> npm test` | also checks every `--brand-*` var of the docs `brand.css` against `dist/tokens.css` |
 | `npm run check` | build, then `git diff --exit-code dist/` — fails when `dist/` drifts from the source |
-
-## Naming rule (the contract)
-
-- CSS var = `--brand-` + token path joined by `-`, `DEFAULT` segments dropped (`glass.DEFAULT` → `--brand-glass`).
-- Tailwind keys use the same path (`accent.fill` → `bg-accent-fill`); `radius.base` → `rounded` (`DEFAULT`).
-- `font.fallback.*` is not a var: it emits `@font-face` fallback blocks in `tokens.css`.
-- Renaming or removing a token is a breaking change for every consumer.
 
 ## Conventions
 
@@ -33,7 +26,25 @@ Style Dictionary 4 into `dist/tokens.css`, `dist/_tokens.scss` and `dist/tailwin
   the release, tag `vX.Y.Z` after the PR merges. Consumers pin the tag.
 - Default: do not commit — git is the user's call.
 
-## Commit Message Format
+### Commit Message Format
 
 **NEVER add `Co-Authored-By: Claude ...` (or any other Claude/Anthropic attribution) to commit messages.**
 Same rule for PR descriptions: no `Generated with [Claude Code]` footer.
+
+## Architecture
+
+- `tokens/brand.json` — the source (DTCG); the only file a value is edited in.
+- `build/` — `config.js` (Style Dictionary) and the custom formats in `build/formats/`.
+- `dist/` — generated and committed: `tokens.css`, `_tokens.scss`, `tailwind-preset.js`.
+- `test/` — the `node:test` suite and the frozen baselines in `test/fixtures/`.
+
+Naming rule (the contract):
+
+- CSS var = `--brand-` + token path joined by `-`, `DEFAULT` segments dropped (`glass.DEFAULT` → `--brand-glass`).
+- Tailwind keys use the same path (`accent.fill` → `bg-accent-fill`); `radius.base` → `rounded` (`DEFAULT`).
+- `font.fallback.*` is not a var: it emits `@font-face` fallback blocks in `tokens.css`.
+- Renaming or removing a token is a breaking change for every consumer.
+
+| Topic | Where |
+|---|---|
+| Entry points, SCSS and Tailwind usage, naming table, radius unit, light theme steps | `docs/usage.md` |
